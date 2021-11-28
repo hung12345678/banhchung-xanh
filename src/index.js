@@ -91,6 +91,6 @@ route(app);
 //     console.log(`App listening at http://localhost:${port}`);
 // });
 
-app.listen(process.env.MONGODB.URI || port)
+app.listen(process.env.MONGODB_URI || port)
 
 //ghi chu
