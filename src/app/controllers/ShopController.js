@@ -120,6 +120,9 @@ class ShopController {
                 }
                 // console.log(mailOption);
 
+
+
+
                 transporter.sendMail(mailOption, function (err, success) {
                     if (err) {
                         console.log("Lỗi!!!")
