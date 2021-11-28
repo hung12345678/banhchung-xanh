@@ -81,7 +81,7 @@ class ShopController {
                 // console.log(array);
                 let mailOption = {
                     from: "thanhhung.it1993@gmail.com",
-                    to: "vti.software03@gmail.com",
+                    to: "nguyenlamtuyetnhu03@gmail.com",
                     subject: "Test Mail",
                     html: `<h2>Đơn Hàng Của A.Hùng Đã Được Tạo + Mã Đơn Hàng: ` + result._id + `</h2>
                     <h3>Thời gian tạo: `+ result.createdAt + ` </h3>
