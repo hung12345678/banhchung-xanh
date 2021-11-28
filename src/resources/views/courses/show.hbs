@@ -1,0 +1,99 @@
+
+<div class="row mt-5 mb-5">
+    <div class="col-lg-4">
+        <div class="divimg">
+            <img style="border-radius: 10px" class="img" src="{{course.image}}" alt="">
+        </div>
+        {{!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/{{course.videoId}}"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe> --}}
+        {{!-- danh sách ảnh --}}
+        <ul class="mt-4 img-list d-flex">
+            <li style="border-radius: 10px" class="list-item"><img style="border-radius: 10px" class="img-item"
+                    src="{{course.imageitem}}" alt=""></li>
+            <li style="border-radius: 10px" class="list-item"><img style="border-radius: 10px" class="img-item"
+                    src="{{course.imageitem1}}" alt=""></li>
+            <li style="border-radius: 10px" class="list-item"><img style="border-radius: 10px" class="img-item"
+                    src="{{course.imageitem2}}" alt=""></li>
+            <li style="border-radius: 10px" class="list-item"><img style="border-radius: 10px" class="img-item"
+                    src="{{course.imageitem3}}" alt=""></li>
+        </ul>
+    </div>
+   
+    <div class="mt-2 col-lg-6">
+        <h2 class="product-text">{{course.name}}</h2>
+        <p>{{course.decripton}}</p>
+        <div class="d-flex">
+            <h2 class="price-text">{{course.price}}.000&nbsp;</h2>đ/<p>{{course.unit}}</p>
+        </div>
+      
+        <div class="d-flex align-items-center">
+            <h3 class="mr-4">Số Lượng</h3>
+            <div class="d-flex quantity-group">
+                <span class="input-group-btn">
+                    <a href="#" class="btn btn-outline-secondary btn-number">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-dash-lg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+                        </svg>
+                    </a>
+                </span>
+                <span class="form-control text-center">1</span>
+                <span class="input-group-btn">
+                    <a href="#" type="button" class="btn btn-outline-secondary btn-number">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-plus-lg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                        </svg>
+                    </a>
+                </span>
+            </div>
+          
+        </div>
+        <div class="mt-4">
+            <a href="/add-to-cart/{{course._id}}" type="submit" class="btn btn-primary">Mua Ngay</a>
+        </div>
+    </div>
+  
+    <div class="ml-2 mt-4">
+        <h4>Đánh giá sản phẩm</h4>
+    </div> 
+</div>
+   
+<div class="modal1">
+    <div class="model1-main">
+        <div class="modal1-item">
+            <img style="width: 100%; height:100%; z-index: 1; border-radius: 10px" class="img-show-center" src=""
+                alt="">
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var imgitems = document.querySelectorAll('.img-item')
+    var img = document.querySelector('.img');
+    var modal = document.querySelector('.modal1');
+    var imgcenter = document.querySelector('.img-show-center')
+    var modal1main = document.querySelector('.model1-main')
+    imgitems.forEach(imgitem => {
+        imgitem.addEventListener('click', (e) => {
+            modal.style.display = "flex";
+            imgcenter.src = imgitem.src;
+        })
+    })
+    modal.onclick = function(){
+        modal.style.display = "none";
+    }
+    modal1main.addEventListener('click', function(e){
+        e.stopPropagation();
+    })
+    imgitems.forEach(imgitem => {
+        imgitem.addEventListener('mouseleave', (e) => {
+            img.src = imgitem.src;
+            imgitem.style.cursor == pointer;
+        })
+    })
+</script>

@@ -1,0 +1,41 @@
+<div class="mt-4">
+    <div>
+        <h3 style="font-weight: bold;" class="text-info text-center">Đơn Hàng</h3>
+    </div>
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Mã ĐH</th>
+                <th scope="col">Khách hàng</th>
+                <th scope="col">Địa chỉ</th>
+                <th scope="col">Sđt</th>
+                <th scope="col">TTiền</th>
+                <th scope="col">Ngày lập phiếu</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each orders}}
+            <tr>
+                {{!-- hàm sum trong file index.js sử dụng helpers của hbs index là đối số thứ nhất a, 1 là b (0+1 = 1)
+                --}}
+                <th scope="row">{{sum @index 1}}</th>
+                 <td><a href="/me/store/orderdetail">{{this._id}}</a></td>
+                <td>{{this.name}}</td>
+                <td>{{this.address}}</td>
+                <td>0{{this.sdt}}</td>
+                <td class="text-danger">{{this.cart.totalPrice}}.000đ</td>
+                <td>{{this.createdAt}}</td>
+               
+            </tr>
+            {{!-- không có dữ liệu sử dụng thưu viện hbs --}}
+            {{else}}
+            <tr>
+                <td colspan="5" class="text-center">
+                    Bạn Chưa Có đơn hàng nào hết.
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

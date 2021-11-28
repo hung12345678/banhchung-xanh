@@ -1,0 +1,27 @@
+{{!-- get --}}
+<div class="mt-4">
+    <form method="get" action="/news">
+    <div class="form-group">
+        <label for="search-input">Từ khóa</label>
+        <input type="text" name="fullname">
+        <input type="text" name="age">
+        <input type="text" name="q" class="form-control" id="search-input" placeholder="Nhập từ khóa...">
+    </div>
+    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+    </form>
+</div>
+
+{{!-- Post --}}
+<div class="mt-4">
+    <form method="Post">
+    <div class="form-group">
+        <label for="search-input">Từ khóa</label>
+        <select type="text" name="gender" class="form-control" id="gender-input">
+            <option value="">--Chọn Giới Tính--</option>
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+    </form>
+</div>

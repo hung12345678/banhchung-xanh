@@ -1,0 +1,69 @@
+@import 'variables';
+
+.slider-item{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    
+}
+.img-item{
+    height: 100%;
+}
+
+h2 {
+    color: $red-color;
+}
+.card-item{
+    margin-top: 16px;
+}
+.user-img{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+.avarta{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.img-banh{
+    height: 250px;
+}
+.divimg{
+    width: 350px;
+    height: 380px;
+}
+.img{
+    width: 100%;
+    height: 100%;
+}
+.img-item{
+    width: 100%;
+    height: 100%;
+}
+.product-text{
+    color: rgb(9, 170, 9);
+}
+.price-text{
+    color: red;
+}
+.quantity-group{
+    height: 100%;
+    width: 150px;
+}
+.list-item{
+    width: 100%;
+    margin-right: 6px;
+}
+.list-item:last-child{
+    margin-right: 0;
+}
+.img-list{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    list-style: none;
+    // overflow-x: auto;
+   
+}

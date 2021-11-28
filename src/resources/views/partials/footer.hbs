@@ -1,0 +1,89 @@
+<!-- Footer -->
+<footer class="footer text-center text-lg-start bg-dark text-white mt-4">
+    <!-- Section: Social media -->
+    <section class="d-flex">
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+        <div class="container text-center text-md-start mt-4">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Liên Hệ
+                    </h6>
+                    <p>
+                        <i class="fas fa-home me-3"></i> 
+                        45/26 Trương Định, Phường Phước Mỹ, Tp.Phan Rang - Tháp Chàm, Tỉnh Ninh Thuận
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        thanhhung.it1993@gmail.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> 0936 143 804</p>
+                    <p><i class="fas fa-print me-3"></i> 038 791 3800</p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Sản Phẩm
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">Bánh Chưng</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Bánh Tét</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Bánh Cấp Cúng</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Còn Nữa</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Google Map
+                    </h6>
+                    <div id="googleMap" style="width:100%;height:200px;"></div>
+
+                </div>
+
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->
+<script>
+    function myMap() {
+        var mapProp = {
+            center: new google.maps.LatLng(11.58678858237324, 108.97633536054225),
+            zoom: 5,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>

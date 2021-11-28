@@ -1,0 +1,127 @@
+<div class="container mt-4">
+    <form class="needs-validation" id="frmthanhtoan" name="frmthanhtoan" method="post" action="/shop/checkout">
+        <div class="checkout-success">
+            <span>Đơn hàng đã được tạo thành công!!!</span>
+        </div>
+        <div class="py-5 text-center">
+            <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
+            <h2 class="text-success">THANH TOÁN</h2>
+            <p class="lead">Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ hàng trước khi Đặt hàng.</p>
+        </div>
+
+        {{!-- <div id="charrge-error" class="alert alert danger hidden">
+
+        </div> --}}
+        <div class="row">
+            <div class="col-md-4 order-md-2 mb-4">
+                {{#if products}}
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Giỏ hàng</span>
+                    {{!-- <span class="badge badge-secondary badge-pill">2</span> --}}
+                </h4>
+                {{#each products}}
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">{{this.item.name}}</h6>
+                            <small class="text-muted">{{this.item.price}}.000 x {{this.qty}}
+                            </small>
+                        </div>
+                        <span class="text-muted">{{this.price}}.000 đ</span>
+                    </li>
+                </ul>
+                {{/each}}
+                <div class="list-group-item d-flex justify-content-between">
+                    <h5 class="text-success">Tổng tiền:</h4>
+                        <strong>{{ totalPrice }}.000 đ</strong>
+                </div>
+
+                {{/if}}
+
+
+
+                {{!--
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Mã khuyến mãi">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-secondary">Xác nhận</button>
+                    </div>
+                </div> --}}
+
+            </div>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Thông tin khách hàng</h4>
+
+                <div class="row">
+                    <div class="form-item col-md-12">
+                        <label for="kh_ten">Họ tên</label>
+                        <input type="text" class="form-control" placeholder="VD:Thanh Hùng" name="fullname"
+                            id="fullname" required="">
+                        <span class="form-item-note"></span>
+                    </div>
+                    <div class="form-item col-md-12">
+                        <label for="kh_diachi">Địa chỉ</label>
+                        <input type="text" class="form-control" name="address" id="address"
+                            placeholder="VD: 45 Trương Định, Kp4, Phường Phước Mỹ, Tp Phan Rang - Tháp Chàm" value=""
+                            required="">
+                        <span class="form-item-note"></span>
+                    </div>
+                    <div class="form-item col-md-12">
+                        <label for="kh_dienthoai">Điện thoại</label>
+                        <input type="text" class="form-control" name="sdt" id="sdt"
+                            placeholder="Nhập số điện thoại ở đây ^^!" required="">
+                        <span class="form-item-note"></span>
+                    </div>
+                </div>
+                {{!-- <h4 class="mb-3">Hình thức thanh toán</h4>
+
+                <div class="d-block my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required=""
+                            value="1">
+                        <label class="custom-control-label" for="httt-1">Tiền mặt</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="httt-2" name="httt_ma" type="radio" class="custom-control-input" required=""
+                            value="2">
+                        <label class="custom-control-label" for="httt-2">Chuyển khoản</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="httt-3" name="httt_ma" type="radio" class="custom-control-input" required=""
+                            value="3">
+                        <label class="custom-control-label" for="httt-3">Ship COD</label>
+                    </div>
+                </div>
+                <hr class="mb-4">--}}
+                <button href="" class="btn btn-primary btn-lg btn-block mt-4" type="submit" name="btnDatHang">Đặt
+                    hàng</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="http://localhost:3000/javascript/validatior.js"></script>
+<script>
+    var formCheckout = document.getElementById('frmthanhtoan');
+    var charrgeError = document.getElementById('charrge-error')
+             
+   
+ 
+   
+    Validator({
+        form: "#frmthanhtoan",
+        rule: [
+            Validator.isRequired("#fullname"),
+
+            Validator.isArress("#address"),
+
+            Validator.isSdt("#sdt"),
+
+        ],
+        onSubmit: function (data) {
+            //Call API
+            console.log(data)
+        }
+    })
+
+</script>
