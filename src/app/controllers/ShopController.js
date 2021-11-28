@@ -123,14 +123,14 @@ class ShopController {
 
 
 
-                // transporter.sendMail(mailOption, function (err, success) {
-                //     if (err) {
-                //         console.log("Lỗi!!!")
-                //     }
-                //     else {
-                //         console.log("Email send success!!!")
-                //     }
-                // })
+                transporter.sendMail(mailOption, function (err, success) {
+                    if (err) {
+                        console.log("Lỗi!!!")
+                    }
+                    else {
+                        console.log("Email send success!!!")
+                    }
+                })
 
                 req.flash('success', 'Đơn hàng đã được tạo! Oanh Lâm sẽ gọi liền cho bạn nhé ^^!');
                 req.session.cart = null;
